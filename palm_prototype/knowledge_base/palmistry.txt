@@ -1,0 +1,140 @@
+# Kiến thức Chiêm Tinh Chỉ Tay (Palmistry Knowledge Base)
+
+## Các đường chỉ tay chính
+
+### Đường Sinh Đạo (Life Line)
+Đường sinh đạo bắt đầu từ giữa ngón cái và ngón trỏ, cong xuống về phía cổ tay.
+- Dài và rõ nét: Sức khỏe tốt, năng lượng dồi dào, tuổi thọ cao.
+- Ngắn: Không liên quan đến tuổi thọ; thể hiện khả năng tự lập và nghị lực.
+- Sâu và rõ: Cuộc sống ổn định, ít biến động.
+- Mờ nhạt hoặc đứt quãng: Có thể gặp thử thách về sức khỏe hoặc thay đổi lớn trong đời.
+- Đường sinh đạo có nhiều vạch ngang cắt qua: Trở ngại, khó khăn trong cuộc sống.
+- Đường đôi (hai đường song song): Bảo vệ mạnh, có người thân hỗ trợ.
+- Vòng cung rộng ôm vào lòng bàn tay: Tính cách nồng nhiệt, yêu cuộc sống.
+- Vòng cung sát ngón cái: Năng lượng thấp, thận trọng.
+
+### Đường Trí Đạo (Head Line)
+Đường trí đạo bắt đầu cùng điểm với đường sinh đạo hoặc gần đó, chạy ngang qua lòng bàn tay.
+- Dài, vươn sang phần Gò Mặt Trăng: Trí tưởng tượng phong phú, sáng tạo, nghệ thuật.
+- Thẳng và ngang: Tư duy thực tế, logic, phân tích tốt.
+- Ngắn: Tập trung thực tế, quyết đoán, không mơ mộng viển vông.
+- Sâu và rõ: Tư duy sắc bén, tập trung cao độ.
+- Mờ hoặc đứt quãng: Thiếu tập trung, dễ bị phân tâm.
+- Đường trí đạo tách rời đường sinh đạo ngay từ đầu: Tính cách táo bạo, tự tin, thích phiêu lưu.
+- Đường trí đạo dính chặt đường sinh đạo một đoạn dài: Thận trọng, phụ thuộc gia đình.
+- Đường nhánh hướng lên: Thành công trong kinh doanh hoặc sự nghiệp tại thời điểm nhánh xuất hiện.
+- Đường nhánh hướng xuống: Thời kỳ chán nản hoặc thua lỗ.
+
+### Đường Tâm Đạo (Heart Line)
+Đường tâm đạo chạy ngang phía trên lòng bàn tay, từ cạnh bàn tay (dưới ngón út) về phía ngón trỏ hoặc giữa.
+- Kết thúc dưới ngón trỏ: Lý tưởng về tình yêu, chọn lọc người yêu, trung thành.
+- Kết thúc dưới ngón giữa: Đặt nặng vật chất trong tình yêu, tự trung tâm.
+- Thẳng và ngắn: Ít quan tâm đến lãng mạn, thực dụng.
+- Dài và cong: Thể hiện cảm xúc phong phú, chủ động trong tình cảm.
+- Sâu và rõ: Cảm xúc mạnh mẽ, đam mê.
+- Mờ nhạt: Cảm xúc dễ bị ảnh hưởng bởi người khác.
+- Nhiều đường nhỏ hướng lên từ tâm đạo: Nhiều mối quan hệ tốt đẹp.
+- Đường gãy hoặc đứt: Chấn thương tình cảm, chia tay.
+
+### Đường Vận Mệnh (Fate Line / Saturn Line)
+Đường vận mệnh chạy dọc từ cổ tay lên phía ngón giữa (không phải ai cũng có).
+- Dài và thẳng: Cuộc đời có định hướng rõ, sự nghiệp ổn định.
+- Bắt đầu từ đường sinh đạo: Sự nghiệp gắn liền với gia đình.
+- Bắt đầu từ Gò Mặt Trăng: Được hỗ trợ từ công chúng hoặc người ngoài gia đình.
+- Đứt quãng: Thay đổi nghề nghiệp hoặc hướng đi.
+- Không có đường vận mệnh: Tự do quyết định số phận, linh hoạt, không bị ràng buộc bởi định mệnh.
+
+## Các Gò (Mounts)
+
+### Gò Kim Tinh (Venus Mount) - dưới ngón cái
+- Phát triển tốt: Yêu thương, đam mê, sức sống dồi dào, hấp dẫn.
+- Phẳng hoặc lõm: Lạnh lùng trong tình cảm, ít năng lượng sống.
+
+### Gò Mặt Trăng (Moon Mount) - cạnh ngoài bàn tay, đối diện ngón cái
+- Phát triển: Trực giác mạnh, sáng tạo, hay mơ mộng.
+- Lõm: Thiếu trí tưởng tượng, thực dụng thuần túy.
+
+### Gò Thủy Tinh (Mercury Mount) - dưới ngón út
+- Phát triển: Khả năng giao tiếp tốt, kinh doanh nhạy bén.
+- Lõm: Khó diễn đạt, né tránh giao tiếp.
+
+### Gò Mộc Tinh (Jupiter Mount) - dưới ngón trỏ
+- Phát triển: Tham vọng, lãnh đạo, tự tin.
+- Lõm: Thiếu tự tin, ít tham vọng.
+
+### Gò Thổ Tinh (Saturn Mount) - dưới ngón giữa
+- Phát triển: Nghiêm túc, cần cù, ưa sự cô độc.
+- Lõm: Thiếu trách nhiệm, bất cẩn.
+
+### Gò Mặt Trời (Apollo/Sun Mount) - dưới ngón áp út
+- Phát triển: Tài năng nghệ thuật, danh vọng, lạc quan.
+- Lõm: Thiếu thẩm mỹ, khó đạt danh tiếng.
+
+## Hình dạng bàn tay
+
+### Bàn tay Đất (ngón ngắn, lòng bàn tay vuông)
+Thực tế, đáng tin cậy, yêu thiên nhiên, kiên nhẫn.
+
+### Bàn tay Khí (ngón dài, lòng bàn tay vuông)
+Tò mò, giao tiếp tốt, hay phân tích, đôi khi lo lắng.
+
+### Bàn tay Nước (ngón dài, lòng bàn tay hình chữ nhật dài)
+Sáng tạo, nhạy cảm, trực giác, dễ bị cảm xúc chi phối.
+
+### Bàn tay Lửa (ngón ngắn, lòng bàn tay hình chữ nhật dài)
+Tự tin, nhiệt tình, bốc đồng, năng động.
+
+## Ngón tay
+
+### Ngón Cái
+Đại diện cho ý chí và logic.
+- Dài và mạnh: Quyết tâm cao, khả năng lãnh đạo.
+- Ngắn: Thiếu ý chí, dễ bị ảnh hưởng.
+
+### Ngón Trỏ (ngón Mộc Tinh)
+Đại diện cho tham vọng và lãnh đạo.
+- Dài hơn ngón giữa: Tham vọng lớn.
+- Cong về phía ngón giữa: Bất an, lo lắng quá mức.
+
+### Ngón Giữa (ngón Thổ Tinh)
+Đại diện cho trách nhiệm và kỷ luật.
+
+### Ngón Áp Út (ngón Mặt Trời)
+Đại diện cho sáng tạo và danh tiếng.
+- Dài: Thiên hướng nghệ thuật, muốn được chú ý.
+
+### Ngón Út (ngón Thủy Tinh)
+Đại diện cho giao tiếp và kinh doanh.
+- Dài vượt khớp trên ngón áp út: Tài năng giao tiếp đặc biệt.
+
+## Đường phụ và dấu hiệu đặc biệt
+
+### Đường Mặt Trời (Sun Line / Apollo Line)
+Chạy lên Gò Mặt Trời. Đại diện cho thành công, danh tiếng, hạnh phúc.
+
+### Đường Thủy Tinh (Mercury Line / Health Line)
+Chạy từ dưới ngón út xuống. Liên quan đến sức khỏe và kinh doanh.
+
+### Vòng Kim Tinh (Girdle of Venus)
+Vòng cung giữa ngón trỏ và ngón út. Nhạy cảm, đa cảm, cầu toàn trong tình cảm.
+
+### Vòng Thổ Tinh (Ring of Saturn)
+Rất hiếm. Cô độc, khép kín.
+
+### Đường Hôn Nhân (Marriage Lines)
+Các đường nằm ngang dưới ngón út.
+- Dài, rõ nét: Mối quan hệ sâu sắc, lâu dài.
+- Nhiều đường: Nhiều mối quan hệ tình cảm sâu sắc.
+- Đường hướng xuống ở đầu: Mối quan hệ mất đi người thương trước.
+
+### Ngôi Sao (Star)
+Dấu hiệu may mắn xuất sắc khi nằm trên Gò Mộc Tinh hoặc Mặt Trời.
+
+### Hình Vuông (Square)
+Bảo vệ, vượt qua khó khăn.
+
+### Đảo nhỏ (Island)
+Gián đoạn, khó khăn hoặc bệnh tật tại thời điểm đó.
+
+### Dấu Chéo X (Cross)
+Cản trở, thất bại – trừ khi nằm trên Gò Mộc Tinh (tình yêu lớn) hoặc Gò Mặt Trời (nổi tiếng đột ngột).

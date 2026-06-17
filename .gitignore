@@ -1,0 +1,8 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+palm_prototype/chroma_db/
+palm_prototype/__pycache__/
+.DS_Store
+*.task
