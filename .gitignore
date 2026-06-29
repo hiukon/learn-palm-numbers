@@ -1,8 +1,51 @@
+# Dependencies
+node_modules/
+/node_modules
 venv/
+.venv/
+env/
+
+# Next.js build and development
+web/.next/
+web/out/
+web/build/
+
+# Environments
+.env
+web/.env.local
+web/.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Python artifacts
 __pycache__/
 *.pyc
 *.pyo
-palm_prototype/chroma_db/
-palm_prototype/__pycache__/
+**/__pycache__/
+
+# OS files
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# AI/ML & Databases (ChromaDB, Models)
+palm_prototype/chroma_db/
 *.task
+*.pt
+*.onnx
+*.bin
+*.pkl
+
+# IDEs & Editor tools
+.claude/
+.cursor/
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

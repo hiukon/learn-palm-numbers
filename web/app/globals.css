@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Reset & Mobile Base ──────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  height: 100%;
+  /* iOS height fix */
+  height: -webkit-fill-available;
+}
+
+body {
+  height: 100%;
+  height: -webkit-fill-available;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  background: #eef3e8;
+  color: #20251b;
+  font-family: 'Avenir Next', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#__next {
+  height: 100%;
+  height: -webkit-fill-available;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Touch: no delay, no callout */
+button, label, [role="button"] {
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Smooth scrolling in iOS WebView */
+.scroll-smooth-ios {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Safe area helpers ────────────────────────────────────────── */
+
+.safe-top    { padding-top:    env(safe-area-inset-top,    0px);  }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom, 16px); }
+.safe-left   { padding-left:   env(safe-area-inset-left,  0px);  }
+.safe-right  { padding-right:  env(safe-area-inset-right, 0px);  }
+
+/* ── Keyframes ────────────────────────────────────────────────── */
+
+/* Scan line sweeps top → bottom */
+@keyframes scan-sweep {
+  0%   { top: -4px;              }
+  100% { top: calc(100% + 4px); }
+}
+
+/* Corner brackets blink */
+@keyframes corner-pulse {
+  0%, 100% { opacity: 1;   border-color: rgba(34, 211, 238, 1);   }
+  50%       { opacity: 0.3; border-color: rgba(34, 211, 238, 0.3); }
+}
+
+/* Loading dots bounce */
+@keyframes dot-bounce {
+  0%, 80%, 100% { transform: scale(0.5); opacity: 0.3; }
+  40%           { transform: scale(1.0); opacity: 1;   }
+}
+
+/* Crystal ball glow pulse */
+@keyframes orb-glow {
+  0%, 100% { box-shadow: 0 0 20px 4px rgba(108, 173, 57, 0.18), 0 0 40px 8px rgba(177, 206, 122, 0.16); }
+  50%       { box-shadow: 0 0 40px 8px rgba(108, 173, 57, 0.28), 0 0 80px 16px rgba(177, 206, 122, 0.22); }
+}
+
+/* Entry animations */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+/* ── Scan Components ──────────────────────────────────────────── */
+
+.scan-container {
+  position: relative;
+  overflow: hidden;
+  /* Promote to GPU layer */
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent    0%,
+    rgba(34, 211, 238, 0.25) 8%,
+    rgba(34, 211, 238, 0.85) 28%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(34, 211, 238, 0.85) 72%,
+    rgba(34, 211, 238, 0.25) 92%,
+    transparent    100%
+  );
+  box-shadow:
+    0 0  6px 2px  rgba(34, 211, 238, 0.75),
+    0 0 16px 5px  rgba(34, 211, 238, 0.40),
+    0 0 32px 10px rgba(34, 211, 238, 0.20);
+  animation: scan-sweep 2s linear infinite;
+  will-change: top;
+  transform: translateZ(0);
+  pointer-events: none;
+}
+
+/* Glow trail above the scan line (area already scanned) */
+.scan-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 90px;
+  bottom: 0; /* aligns pseudo-bottom with scan-line bottom */
+  background: linear-gradient(to top, rgba(34, 211, 238, 0.10), transparent);
+  pointer-events: none;
+}
+
+/* Subtle glow below (about to scan) */
+.scan-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 24px;
+  top: 2px; /* just below the line */
+  background: linear-gradient(to bottom, rgba(34, 211, 238, 0.06), transparent);
+  pointer-events: none;
+}
+
+/* Corner bracket base */
+.corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+}
+
+.corner-tl {
+  top: 12px; left: 12px;
+  border-top:  2px solid #22d3ee;
+  border-left: 2px solid #22d3ee;
+  animation: corner-pulse 2s ease-in-out infinite;
+  animation-delay: 0s;
+}
+.corner-tr {
+  top: 12px; right: 12px;
+  border-top:   2px solid #22d3ee;
+  border-right: 2px solid #22d3ee;
+  animation: corner-pulse 2s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+.corner-bl {
+  bottom: 12px; left: 12px;
+  border-bottom: 2px solid #22d3ee;
+  border-left:   2px solid #22d3ee;
+  animation: corner-pulse 2s ease-in-out infinite;
+  animation-delay: 1s;
+}
+.corner-br {
+  bottom: 12px; right: 12px;
+  border-bottom: 2px solid #22d3ee;
+  border-right:  2px solid #22d3ee;
+  animation: corner-pulse 2s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.corner.static {
+  animation: none;
+  opacity: 0.35;
+}
+
+/* ── Loading Dots ─────────────────────────────────────────────── */
+
+.dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #22d3ee;
+  animation: dot-bounce 1.4s ease-in-out infinite;
+}
+.dot:nth-child(1) { animation-delay: 0s;    }
+.dot:nth-child(2) { animation-delay: 0.22s; }
+.dot:nth-child(3) { animation-delay: 0.44s; }
+
+/* ── Crystal Ball ─────────────────────────────────────────────── */
+
+.orb {
+  animation: orb-glow 2.2s ease-in-out infinite;
+}
+
+/* ── Entry animations ─────────────────────────────────────────── */
+
+.fade-in-up {
+  animation: fade-in-up 0.45s ease-out both;
+}
+
+.slide-in-right {
+  animation: slide-in-right 0.5s ease-out both;
+}
+
+/* ── Palm Numerology Background ──────────────────────────────── */
+
+.palm-stage {
+  position: relative;
+  background:
+    radial-gradient(circle at 14% 20%, rgba(164, 205, 112, 0.30), transparent 24%),
+    radial-gradient(circle at 82% 14%, rgba(214, 232, 180, 0.42), transparent 22%),
+    radial-gradient(circle at 84% 84%, rgba(188, 216, 144, 0.34), transparent 28%),
+    radial-gradient(circle at 24% 82%, rgba(244, 224, 169, 0.32), transparent 20%),
+    linear-gradient(180deg, #f6faef 0%, #edf5e4 46%, #e8f1de 100%);
+  isolation: isolate;
+}
+
+.palm-stage::before,
+.palm-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.palm-stage::before {
+  background:
+    linear-gradient(rgba(118,146,94,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(118,146,94,0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.75), transparent 92%);
+  opacity: 0.45;
+}
+
+.palm-stage::after {
+  inset: 12% 6% auto auto;
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(163, 211, 106, 0.22), transparent 32%),
+    radial-gradient(circle at 70% 55%, rgba(247, 223, 156, 0.18), transparent 42%),
+    radial-gradient(circle at 48% 48%, rgba(208, 227, 171, 0.18), transparent 68%);
+  filter: blur(26px);
+  opacity: 0.92;
+}

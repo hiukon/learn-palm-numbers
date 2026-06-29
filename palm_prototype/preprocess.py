@@ -37,12 +37,15 @@ def _apply_clahe(gray: np.ndarray) -> np.ndarray:
     return clahe.apply(gray)
 
 
-def preprocess_palm(image_bgr: np.ndarray) -> tuple[np.ndarray | None, str]:
+def preprocess_palm(image_bgr: np.ndarray) -> tuple[np.ndarray | None, str, str | None]:
     """
     Extracts and enhances the palm ROI from an image.
 
     Returns:
-        (roi_bgr, message) where roi_bgr is None on failure.
+        (roi_bgr, message, detected_hand)
+        detected_hand: "Left" | "Right" from the PERSON's perspective (assumes back camera).
+                       MediaPipe uses image perspective, so we swap for non-mirrored images.
+                       None when handedness is unavailable.
     """
     detector = _get_detector()
 
@@ -51,7 +54,11 @@ def preprocess_palm(image_bgr: np.ndarray) -> tuple[np.ndarray | None, str]:
     result = detector.detect(mp_image)
 
     if not result.hand_landmarks:
-        return None, "Không phát hiện bàn tay trong ảnh."
+        return None, "Không phát hiện bàn tay trong ảnh.", None
+
+    detected_hand: str | None = None
+    if result.handedness:
+        detected_hand = result.handedness[0][0].category_name  # "Left"/"Right" from person's perspective
 
     h, w = image_bgr.shape[:2]
     lm = result.hand_landmarks[0]
@@ -78,7 +85,7 @@ def preprocess_palm(image_bgr: np.ndarray) -> tuple[np.ndarray | None, str]:
 
     roi = image_bgr[y1:y2, x1:x2]
     if roi.size == 0:
-        return None, "ROI rỗng sau khi cắt."
+        return None, "ROI rỗng sau khi cắt.", detected_hand
 
     # CLAHE on L channel of LAB for colour-preserving enhancement
     lab = cv2.cvtColor(roi, cv2.COLOR_BGR2LAB)
@@ -88,11 +95,11 @@ def preprocess_palm(image_bgr: np.ndarray) -> tuple[np.ndarray | None, str]:
     roi_enhanced = cv2.cvtColor(enhanced, cv2.COLOR_LAB2BGR)
 
     roi_resized = cv2.resize(roi_enhanced, (512, 512), interpolation=cv2.INTER_LANCZOS4)
-    return roi_resized, "OK"
+    return roi_resized, "OK", detected_hand
 
 
-def preprocess_from_path(image_path: str) -> tuple[np.ndarray | None, str]:
+def preprocess_from_path(image_path: str) -> tuple[np.ndarray | None, str, str | None]:
     img = cv2.imread(image_path)
     if img is None:
-        return None, f"Không đọc được ảnh: {image_path}"
+        return None, f"Không đọc được ảnh: {image_path}", None
     return preprocess_palm(img)

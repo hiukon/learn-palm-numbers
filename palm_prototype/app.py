@@ -14,7 +14,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from preprocess import preprocess_palm
 from palm_reader import read_palm
 
-GEMINI_API_KEY = "AIzaSyCxCAZUB6_TSJpPoc52-euXRd4U_2pPYBY"
+import os
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY", "")
 
 st.set_page_config(
     page_title="Palm Reader AI",
@@ -92,7 +93,7 @@ if img_bgr is not None:
         st.image(cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB), use_container_width=True)
 
     with st.spinner("Đang cắt và cải thiện ảnh lòng bàn tay..."):
-        roi, msg = preprocess_palm(img_bgr)
+        roi, msg, _ = preprocess_palm(img_bgr)
 
     if roi is None:
         st.error(f"Không phát hiện bàn tay: {msg}. Hãy thử lại với ảnh rõ hơn.")
